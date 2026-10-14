@@ -1,0 +1,47 @@
+name: Publish GoTracker
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - run: python -m pip install openpyxl==3.1.5
+      - name: Update all languages from the English workbook
+        run: python tools/sync-from-excel.py
+      - name: Check catalog and multilingual search
+        run: node tools/check.mjs
+      - uses: actions/configure-pages@v5
+      - name: Prepare public files
+        run: |
+          mkdir -p _site
+          cp index.html app.js core.js i18n.js styles.css .nojekyll _site/
+          cp -R data assets downloads _site/
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
