@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="description" content="Search the GoTracker Pokémon collection in ten languages. Check files, folders, Pokémon GO availability and GO to HOME transfers before downloading.">
+ <meta name="theme-color" content="#183953"><title>GoTracker — Pokémon catalog</title>
+ <link rel="icon" href="./assets/mark.svg" type="image/svg+xml">
+ <link rel="stylesheet" href="./styles.css"><script type="module" src="./app.js"></script>
+</head>
+<body>
+ <a class="skip" href="#results" data-i18n="skip">Skip to results</a>
+ <header class="topbar"><div class="shell topbar-inner">
+  <a class="brand" href="./" aria-label="GoTracker"><img src="./assets/mark.svg" width="34" height="34" alt=""><span>GoTracker</span></a>
+  <div class="header-actions"><label class="language"><span class="sr-only" data-i18n="language">Language</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg><select id="language" aria-label="Language">
+    <option value="en">English</option><option value="es">Español (España)</option><option value="es-419">Español (Latinoamérica)</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option>
+  </select></label><a class="button download" href="./downloads/GoTracker.zip" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg><span data-i18n="download">Download collection</span></a></div>
+ </div></header>
+ <main class="shell">
+  <section class="heading"><div><p class="eyebrow" data-i18n="collection">POKÉMON GO COLLECTION</p><h1 data-i18n="title">Pokémon catalog</h1></div><div class="headline-count"><span class="count-dot"></span><strong id="available-total">940</strong><span data-i18n="available">available</span></div></section>
+  <section class="controls" aria-label="Catalog filters" id="filters">
+   <div class="search-row"><div class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><label class="sr-only" for="search" data-i18n="searchLabel">Search Pokémon in any language</label><input id="search" type="search" placeholder="Search a name in any language or a Dex number…" autocomplete="off" spellcheck="false"><kbd>/</kbd></div><button id="share" class="button secondary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 13 4-4m-5 7-2 2a4 4 0 0 1-5-5l5-5a4 4 0 0 1 6 0m-2 0 2-2a4 4 0 0 1 5 5l-5 5a4 4 0 0 1-6 0"/></svg><span data-i18n="share">Share search</span></button></div>
+   <div class="filter-row"><div class="segments" role="group" aria-label="Collection availability" id="availability"><button type="button" data-value="all" aria-pressed="true" data-i18n="all">All</button><button type="button" data-value="yes" aria-pressed="false" data-i18n="available">Available</button><button type="button" data-value="no" aria-pressed="false" data-i18n="missing">Missing</button></div>
+    <label class="select-field"><span data-i18n="folder">Folder</span><select id="folder"><option value="" data-i18n="allFolders">All folders</option><option value="SV">SV</option><option value="SS">SS</option><option value="BDSP">BDSP</option><option value="LZA">LZA</option></select></label>
+    <label class="select-field"><span>Pokémon GO</span><select id="go"><option value="" data-i18n="any">Any</option><option value="yes" data-i18n="released">Released</option><option value="no" data-i18n="unreleased">Not released</option></select></label>
+    <label class="select-field"><span data-i18n="home">GO to HOME</span><select id="home"><option value="" data-i18n="any">Any</option><option value="yes" data-i18n="yes">Yes</option><option value="no" data-i18n="no">No</option><option value="na" data-i18n="na">N/A</option></select></label>
+    <label class="select-field"><span data-i18n="form">Form</span><select id="region"><option value="" data-i18n="any">Any</option><option value="Base" data-region="Base">Standard</option><option value="Alola">Alola</option><option value="Galar">Galar</option><option value="Hisui">Hisui</option><option value="Paldea">Paldea</option></select></label>
+    <button id="clear" type="button" class="clear" data-i18n="clear">Reset</button>
+   </div>
+  </section>
+  <section id="results" tabindex="-1" aria-label="Pokémon results">
+   <div class="result-toolbar"><p id="result-count" role="status" aria-live="polite">Loading catalog…</p><label class="sort"><span class="sr-only" data-i18n="sort">Sort by</span><select id="sort"><option value="dex" data-i18n="dexOrder">Dex number</option><option value="name" data-i18n="nameOrder">Name A–Z</option></select></label></div>
+   <div class="catalog"><table><thead><tr><th scope="col" data-i18n="dex">Dex No.</th><th scope="col" data-i18n="pokemon">Pokémon</th><th scope="col" data-i18n="inCollection">In collection</th><th scope="col" data-i18n="zipFolder">ZIP folder</th><th scope="col" data-i18n="inGo">Released in GO</th><th scope="col" data-i18n="home">GO to HOME</th></tr></thead><tbody id="rows"></tbody></table>
+   <div id="empty" class="empty" hidden><span class="empty-icon">?</span><h2 data-i18n="noResults">No Pokémon found</h2><p data-i18n="tryAgain">Try another name or reset the filters.</p><button class="button secondary" id="empty-reset" data-i18n="clear">Reset</button></div></div>
+   <div class="pagination"><button id="previous" class="button secondary" data-i18n="previous">Previous</button><span id="page-label"></span><button id="next" class="button secondary" data-i18n="next">Next</button></div>
+  </section>
+  <footer><div class="footer-main"><span id="updated"></span><a href="./downloads/GoTracker_Catalog_EN.xlsx" download data-i18n="excel">Download Excel (English)</a></div><details><summary data-i18n="details">Data and credits</summary><p data-i18n="scope">Availability means at least one file for that species or regional form. It does not include every variant. The folder is the file location, not a list of all compatible games.</p><p data-i18n="homeNote">GO to HOME: N/A means not released in GO. Spinda, Zygarde and Eternatus cannot currently transfer from GO. Species-level eligibility does not include blocked costumes or other restricted variants.</p><p>SV: Scarlet / Violet. SS: Sword / Shield. BDSP: Brilliant Diamond / Shining Pearl. LZA: Pokémon Legends: Z-A.</p><ul id="sources"></ul></details></footer>
+ </main><div id="toast" class="toast" role="status" hidden></div>
+ <noscript><p class="shell">JavaScript is required to search this catalog. <a href="./downloads/GoTracker_Catalog_EN.xlsx">Download the Excel catalog</a>.</p></noscript>
+</body></html>
