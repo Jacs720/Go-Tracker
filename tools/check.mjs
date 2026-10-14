@@ -30,6 +30,16 @@ assert.deepEqual(search('#0025').map(e=>e.dex),[25]);
 assert.deepEqual(search('mr mime').map(e=>e.dex),[122,122]);
 assert.ok(search('Farfetchd').some(e=>e.dex===83));
 assert.ok(search('Raichu Alola').every(e=>e.region==='Alola'));
+for(const color of ['white','blue','yellow']){
+ const result=search(`Squawkabilly ${color}`);
+ assert.equal(result.length,1);assert.equal(result[0].form,color);
+ assert.equal(result[0].available,true);assert.deepEqual(result[0].folders,['GoTracker/SV']);
+}
+assert.equal(search('Squawkabilly').length,4);
+assert.ok(search('Squawkabilly blanco').some(e=>e.form==='white'));
+const rotom=search('Rotom').find(e=>e.id==='0479-Base');
+assert.equal(entries.filter(e=>e.id==='0479-Base').length,1);
+assert.equal(rotom.available,true);assert.deepEqual(rotom.folders,['GoTracker/SV']);
 assert.equal(search('zz_no_such_pokemon_zz').length,0);
 assert.ok(search('',{available:'no',go:'yes',home:'yes'}).every(e=>!e.available&&e.go&&e.home));
 for(const code of data.languages){

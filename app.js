@@ -1,4 +1,4 @@
-import {displayName,prepareEntries,filterEntries} from './core.js';
+import {displayName,displayForm,prepareEntries,filterEntries} from './core.js';
 import {translations,regions} from './i18n.js';
 const $=id=>document.getElementById(id),PAGE_SIZE=60;
 const defaults={lang:'en',q:'',available:'all',folder:'',go:'',home:'',region:'',sort:'dex',page:1};
@@ -46,7 +46,8 @@ function render(){
   const monCell=element('td'),mon=element('div','mon'),img=element('img');
   img.src=`./assets/pokemon/${entry.id}.png`;img.alt='';img.width=56;img.height=56;img.loading='lazy';img.decoding='async';
   const name=displayName(data,entry,state.lang),nameBox=element('div');nameBox.append(element('span','mon-name',name));
-  if(entry.region!=='Base')nameBox.append(element('span','mon-sub',regions[state.lang][entry.region]));
+  if(entry.form)nameBox.append(element('span','mon-sub',displayForm(entry,state.lang)));
+  else if(entry.region!=='Base')nameBox.append(element('span','mon-sub',regions[state.lang][entry.region]));
   else if(state.lang!=='en'&&name!==data.names.en[entry.dex])nameBox.append(element('span','mon-sub',data.names.en[entry.dex]));
   mon.append(img,nameBox);monCell.append(mon);tr.append(monCell);
   const availableCell=element('td');availableCell.dataset.label=t('inCollection');

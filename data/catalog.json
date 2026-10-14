@@ -15973,8 +15973,10 @@
       "id": "0479-Base",
       "dex": 479,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
       "go": true,
       "home": true
     },
@@ -20979,6 +20981,43 @@
       "region": "Base",
       "available": false,
       "folders": [],
+      "go": true,
+      "home": true,
+      "form": "green"
+    },
+    {
+      "id": "0931-blue",
+      "dex": 931,
+      "region": "Base",
+      "form": "blue",
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
+      "go": true,
+      "home": true
+    },
+    {
+      "id": "0931-yellow",
+      "dex": 931,
+      "region": "Base",
+      "form": "yellow",
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
+      "go": true,
+      "home": true
+    },
+    {
+      "id": "0931-white",
+      "dex": 931,
+      "region": "Base",
+      "form": "white",
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
       "go": true,
       "home": true
     },

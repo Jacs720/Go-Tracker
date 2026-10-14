@@ -23,11 +23,15 @@ def main():
     for values in rows:
         if not values[0]:continue
         dex,_,name,available,folder,go,home=values[:7]
-        dex=int(dex);region='Base';name=str(name).strip()
+        dex=int(dex);region='Base';name=str(name).strip();form=None
+        if dex==931:
+            for color in ('green','blue','yellow','white'):
+                suffix=f' ({color.title()} Plumage)'
+                if name.endswith(suffix):name=name[:-len(suffix)];form=color;break
         for prefix,group in prefixes.items():
             if name.startswith(prefix+' '):region=group;name=name[len(prefix)+1:];break
         assert name==english[dex],f'Name and Dex do not match: {dex} {name}'
-        key=f'{dex:04d}-{region}';assert key in expected and key not in updates,f'Unknown/duplicate row: {key}'
+        key=f'{dex:04d}-{form if form and form!="green" else region}';assert key in expected and key not in updates,f'Unknown/duplicate row: {key}'
         present=boolean(available);go=boolean(go);home=boolean(home,True)
         folders=[] if folder is None or str(folder).strip() in ('','—','-') else sorted(set(re.split(r'\s*\n\s*',str(folder).strip())))
         assert present==bool(folders),f'Availability/folder mismatch: {key}'

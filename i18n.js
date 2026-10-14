@@ -1,3 +1,15 @@
+export const plumages={
+ en:{green:'Green Plumage',blue:'Blue Plumage',yellow:'Yellow Plumage',white:'White Plumage'},
+ es:{green:'Plumaje verde',blue:'Plumaje azul',yellow:'Plumaje amarillo',white:'Plumaje blanco'},
+ 'es-419':{green:'Plumaje verde',blue:'Plumaje azul',yellow:'Plumaje amarillo',white:'Plumaje blanco'},
+ fr:{green:'Plumage Vert',blue:'Plumage Bleu',yellow:'Plumage Jaune',white:'Plumage Blanc'},
+ de:{green:'Grünes Gefieder',blue:'Blaues Gefieder',yellow:'Gelbes Gefieder',white:'Weißes Gefieder'},
+ it:{green:'Piumaggio Verde',blue:'Piumaggio Blu',yellow:'Piumaggio Giallo',white:'Piumaggio Bianco'},
+ ja:{green:'グリーンフェザー',blue:'ブルーフェザー',yellow:'イエローフェザー',white:'ホワイトフェザー'},
+ ko:{green:'그린 페더',blue:'블루 페더',yellow:'옐로 페더',white:'화이트 페더'},
+ 'zh-Hans':{green:'绿羽毛',blue:'蓝羽毛',yellow:'黄羽毛',white:'白羽毛'},
+ 'zh-Hant':{green:'綠羽毛',blue:'藍羽毛',yellow:'黃羽毛',white:'白羽毛'}
+};
 const keys=['skip','language','download','collection','title','available','searchLabel','placeholder','share','all','missing','folder','allFolders','any','released','unreleased','home','yes','no','na','form','clear','sort','dexOrder','nameOrder','dex','pokemon','inCollection','zipFolder','inGo','noResults','tryAgain','previous','next','excel','details','scope','homeNote','copied','copyFailed','updated','resultCount','pageLabel','loadingError'];
 const rows={
 en:['Skip to results','Language','Download collection','POKÉMON GO COLLECTION','Pokémon catalog','Available','Search Pokémon in any language','Search a name in any language or a Dex number…','Share search','All','Missing','Folder','All folders','Any','Released','Not released','GO to HOME','Yes','No','N/A','Form','Reset','Sort by','Dex number','Name A–Z','Dex No.','Pokémon','In collection','ZIP folder','Released in GO','No Pokémon found','Try another name or reset the filters.','Previous','Next','Download Excel (English)','Data and credits','Availability means at least one file for that species or regional form. It does not include every variant. The folder is the file location, not a list of all compatible games.','GO to HOME: N/A means not released in GO. Spinda, Zygarde and Eternatus cannot currently transfer from GO. Species-level eligibility does not include blocked costumes or other restricted variants.','Search link copied','Copy the URL from your address bar.','Updated {date}','{first}–{last} of {total} entries','Page {page} of {pages}','The catalog could not load. Reload the page or download the Excel file.'],

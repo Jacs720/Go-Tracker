@@ -1,10 +1,13 @@
+import {plumages} from './i18n.js';
 export function normalize(value){return String(value??'').normalize('NFKD').replace(/\p{M}/gu,'').toLocaleLowerCase('en').replace(/[’']/g,'');}
+export function displayForm(entry,lang){return entry.form?(plumages[lang]||plumages.en)[entry.form]:'';}
 export function displayName(data,entry,lang){return data.names[lang]?.[entry.dex]||data.names.en[entry.dex];}
 export function prepareEntries(data,regions){
  return data.entries.map(entry=>{
   const aliases=[];
   for(const lang of data.languages){
    const name=displayName(data,entry,lang);aliases.push(name);
+   if(entry.form){const form=displayForm(entry,lang);aliases.push(form,`${name} ${form}`);}
    if(entry.region!=='Base'){
     const reg=regions[lang][entry.region];aliases.push(`${reg} ${name}`,`${reg.replace(/\s/g,'')}${name}`,`${name}${reg.replace(/\s/g,'')}`);
    }
