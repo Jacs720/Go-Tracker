@@ -4,4 +4,40 @@
 @media(max-width:650px){.shell{width:calc(100% - 28px)}.topbar-inner{min-height:70px;gap:10px;flex-wrap:wrap;padding:14px 0}.brand{font-size:20px;gap:8px}.brand img{height:30px;width:30px}.header-actions{gap:10px}.language select{font-size:12px;max-width:146px;padding-right:0}.language svg{height:16px;width:16px}.header-actions .download{display:none}.heading{padding:28px 0 21px;gap:9px}h1{font-size:27px}.eyebrow{font-size:9px;letter-spacing:1.2px}.headline-count{font-size:11px;gap:4px}.headline-count strong{font-size:15px}.controls{padding:14px}.search-box{padding-inline:10px;gap:8px}.search-box input{font-size:13px}.search-box kbd{display:none}.search-row{gap:6px}.search-row .button{width:42px;padding:8px}.search-row .button span{display:none}.filter-row{gap:12px 10px;margin-top:14px}.segments{max-width:100%;width:100%;justify-content:space-between}.segments button{flex:1}.select-field{flex-basis:40%;min-width:0}.select-field select{font-size:12px}.clear{margin-left:auto;font-size:12px}.result-toolbar{padding-top:19px}table,tbody{display:block}thead{display:none}tbody tr{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;padding:13px 16px;border-bottom:1px solid var(--line);position:relative}tbody tr:last-child{border-bottom:0}td{display:block;border:0;height:auto;padding:0}.dex{position:absolute;right:16px;top:17px;font-size:11px}td:nth-child(2){grid-column:1/-1;padding-right:45px;margin-bottom:13px}.mon{gap:12px}.mon img{width:55px;height:55px}.mon-name{font-size:15px}.mon-sub{font-size:11px}td[data-label]:before{content:attr(data-label);display:block;color:#8395a2;font-size:10px;margin:0 0 5px}td:nth-child(3),td:nth-child(4){padding-bottom:13px}.badge{font-size:11px;padding:5px 8px}.folder{font-size:11px}.pagination{gap:14px}.footer-main{flex-direction:column;gap:12px}footer{padding-bottom:25px}.heading .headline-count span:last-child{max-width:75px}.topbar .download-mobile{display:flex}}
 @media(max-width:650px){.header-actions .download{display:inline-flex;padding:9px;width:38px;min-height:38px}.header-actions .download span{display:none}.header-actions{gap:8px}.language select{max-width:130px}.language{gap:5px}.header-actions svg{width:17px;height:17px}}
 .heading{justify-content:flex-end;padding:18px 0 14px}
+:root{color-scheme:dark;color:#d8e3eb;background:#101820;--ink:#e5eef5;--muted:#a4b6c5;--line:#304250;--accent:#f0ac87;--surface:#18232e;--raised:#223240}
+body{background:#101820}
+.topbar,.controls,.catalog{background:var(--surface)}
+.controls{box-shadow:0 2px 8px #0002}
+.brand img{border-radius:7px}
+.language select,.select-field select,.sort select{color:var(--ink)}
+select option{color:var(--ink);background:var(--surface)}
+.download{background:#32698f;color:#fff}
+.download:hover{background:#3d7ba5}
+.secondary,.select-field select{background:var(--surface)}
+.secondary:hover:not(:disabled){background:var(--raised);border-color:#638095}
+.eyebrow,.select-field>span,th{color:#b0c1ce}
+.count-dot{background:#8bdbaf}
+.search-box{background:#101c26;border-color:#3c5263}
+.search-box:focus-within{border-color:#91bddc;box-shadow:0 0 0 3px #91bddc26}
+.search-box svg,.search-box input::placeholder,.search-box kbd{color:#9fb4c4}
+.search-box kbd{border-color:#496071}
+.segments{background:#0f1b25}
+.segments button{color:#a9bccb}
+.segments button[aria-pressed=true]{background:#30495e;box-shadow:0 1px 3px #0003}
+.clear{color:#b2c8d8}
+th{background:#21313f}
+td{border-bottom-color:#2b3b49}
+tbody tr:hover{background:#1e3040}
+.dex,.mon-sub,footer{color:#a4b6c5}
+.badge{background:#2a3947;color:#bdcbd6}
+.badge.yes{background:#203e35;color:#a0e4bf}
+.badge.no{background:#453823;color:#f2d08d}
+.badge.blocked{background:#472e33;color:#ffb4ae}
+.folder{color:#afcfe5}
+.no-folder{color:#98acbb}
+.empty-icon{border-color:#496071;color:#b0c5d5}
+.toast{background:#2b4356;color:#f0f6fb;box-shadow:0 8px 24px #0006}
+.skip{background:var(--raised);color:var(--ink)}
+button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible,input:focus-visible{outline-color:#f0ac87}
+@media(max-width:650px){td[data-label]:before{color:#afc1ce}}
 @media(prefers-reduced-motion:no-preference){button,a,select{transition:background-color .12s,border-color .12s}}
