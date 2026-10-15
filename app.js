@@ -3,7 +3,7 @@ import {translations,regions} from './i18n.js';
 const $=id=>document.getElementById(id),PAGE_SIZE=60;
 const defaults={lang:'en',q:'',available:'all',folder:'',go:'',home:'',region:'',sort:'dex',page:1};
 let data,entries,state={...defaults},toastTimer;
-const choices={available:['all','yes','no'],folder:['','SV','SS','BDSP','LZA'],go:['','yes','no'],home:['','yes','no','na'],region:['','Base','Alola','Galar','Hisui','Paldea'],sort:['dex','name']};
+const choices={available:['all','yes','no'],folder:['','SV','SS','BDSP','LZA','LGPE'],go:['','yes','no'],home:['','yes','no','na'],region:['','Base','Alola','Galar','Hisui','Paldea'],sort:['dex','name']};
 const t=key=>translations[state.lang][key]||translations.en[key]||key;
 function format(key,values){return t(key).replace(/\{(\w+)\}/g,(_,k)=>values[k]??'');}
 function readLocation(){

@@ -10512,8 +10512,10 @@
       "id": "0019-Alola",
       "dex": 19,
       "region": "Alola",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/LGPE"
+      ],
       "go": true,
       "home": true
     },
@@ -10533,8 +10535,10 @@
       "id": "0020-Alola",
       "dex": 20,
       "region": "Alola",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/LGPE"
+      ],
       "go": true,
       "home": true
     },
