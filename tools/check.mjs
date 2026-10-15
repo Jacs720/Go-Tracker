@@ -17,7 +17,7 @@ for(const e of entries){
  assert.equal(typeof e.available,'boolean');assert.equal(typeof e.go,'boolean');
  assert.ok([true,false,null].includes(e.home));assert.equal(e.available,e.folders.length>0);
  assert.ok(e.go||e.home===null);assert.ok(!e.available||e.go);
- assert.ok(e.folders.every(p=>/^GoTracker\/(SV|SS|BDSP|LZA)$/.test(p)));
+ assert.ok(e.folders.every(p=>/^GoTracker\/(SV|SS|BDSP|LZA|LGPE)$/.test(p)));
  await fs.access(path.join(root,'assets/pokemon',e.id+'.png'));
 }
 const initial={lang:'en',q:'',available:'all',folder:'',go:'',home:'',region:'',sort:'dex'};

@@ -35,7 +35,7 @@ def main():
         present=boolean(available);go=boolean(go);home=boolean(home,True)
         folders=[] if folder is None or str(folder).strip() in ('','—','-') else sorted(set(re.split(r'\s*\n\s*',str(folder).strip())))
         assert present==bool(folders),f'Availability/folder mismatch: {key}'
-        assert all(re.fullmatch(r'GoTracker/(SV|SS|BDSP|LZA)',p) for p in folders),f'Invalid folder: {key}'
+        assert all(re.fullmatch(r'GoTracker/(SV|SS|BDSP|LZA|LGPE)',p) for p in folders),f'Invalid folder: {key}'
         assert go or home is None,f'GO/HOME mismatch: {key}'
         assert not present or go,f'File exists but GO is marked No: {key}'
         updates[key]={**expected[key],'available':present,'folders':folders,'go':go,'home':home}
