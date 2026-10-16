@@ -11693,8 +11693,10 @@
       "id": "0101-Hisui",
       "dex": 101,
       "region": "Hisui",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
       "go": true,
       "home": true
     },
@@ -16087,8 +16089,10 @@
       "id": "0486-Base",
       "dex": 486,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
       "go": true,
       "home": true
     },
@@ -19930,8 +19934,10 @@
       "id": "0826-Base",
       "dex": 826,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SS"
+      ],
       "go": true,
       "home": true
     },
@@ -20140,8 +20146,10 @@
       "id": "0846-Base",
       "dex": 846,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
       "go": true,
       "home": true
     },
@@ -20149,8 +20157,10 @@
       "id": "0847-Base",
       "dex": 847,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
       "go": true,
       "home": true
     },
@@ -21041,8 +21051,10 @@
       "id": "0931-Base",
       "dex": 931,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
       "go": true,
       "home": true,
       "form": "green"
