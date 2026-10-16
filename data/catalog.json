@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "collectionFilename": "GoTracker.zip",
   "collectionSha256": "fcc9c733619af270303ae0f22b995a8ad3f490ab8c7ac2574bc59b16b442138a",
   "languages": [
@@ -10791,8 +10791,10 @@
       "id": "0038-Alola",
       "dex": 38,
       "region": "Alola",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SS"
+      ],
       "go": true,
       "home": true
     },
@@ -10954,8 +10956,10 @@
       "id": "0051-Alola",
       "dex": 51,
       "region": "Alola",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SS"
+      ],
       "go": true,
       "home": true
     },
@@ -13682,8 +13686,10 @@
       "id": "0268-Base",
       "dex": 268,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/BDSP"
+      ],
       "go": true,
       "home": true
     },
@@ -15053,8 +15059,10 @@
       "id": "0393-Base",
       "dex": 393,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
       "go": true,
       "home": true
     },
@@ -18765,8 +18773,10 @@
       "id": "0720-Base",
       "dex": 720,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
       "go": true,
       "home": true
     },
@@ -19398,7 +19408,8 @@
       "region": "Base",
       "available": true,
       "folders": [
-        "GoTracker/SS"
+        "GoTracker/SS",
+        "GoTracker/SV"
       ],
       "go": true,
       "home": true
@@ -19897,8 +19908,10 @@
       "id": "0824-Base",
       "dex": 824,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SS"
+      ],
       "go": true,
       "home": true
     },
@@ -19906,8 +19919,10 @@
       "id": "0825-Base",
       "dex": 825,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SS"
+      ],
       "go": true,
       "home": true
     },
@@ -21233,8 +21248,10 @@
       "id": "0947-Base",
       "dex": 947,
       "region": "Base",
-      "available": false,
-      "folders": [],
+      "available": true,
+      "folders": [
+        "GoTracker/SV"
+      ],
       "go": true,
       "home": true
     },
